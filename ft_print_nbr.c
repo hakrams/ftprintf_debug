@@ -29,6 +29,7 @@ int	ft_print_int(int n)
 {
 	long	nb;
 	int		count;
+	int		tmp;
 
 	nb = (long)n;
 	count = 0;
@@ -39,7 +40,10 @@ int	ft_print_int(int n)
 			return (-1);
 		nb = -nb;
 	}
-	return (count + putnbr_u((unsigned long)nb));
+	tmp = putnbr_u((unsigned long)nb);
+	if (tmp < 0)
+		return (-1);
+	return (count + tmp);
 }
 
 int	ft_print_uint(unsigned int n)
